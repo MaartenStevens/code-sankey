@@ -80,11 +80,12 @@ sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
 
 # Poging om de kleuren aan te passen
 
-d3.scaleOrdinal(["#7d3945", "#e0677b", "#244457"])
+colors <- 'd3.scaleOrdinal() .domain(["akker", "grasland", "bos"]) .range(["#fff7bc", "#addd8e", "#004529"])'
 
 sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
-              Target = 'target', Value = 'value', NodeID = 'codetxt',
-              units = 'ha', colourScale = , fontSize = 12, nodeWidth = 25, nodePadding = 20)
-
-
+              Target = 'target', Value = 'value', NodeID = 'group',
+              units = 'ha', fontSize = 12, nodeWidth = 25, nodePadding = 20,
+              NodeGroup = "group", LinkGroup = "group",
+              colourScale = colors,
+              iterations = 0)
 
