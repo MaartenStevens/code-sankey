@@ -2,9 +2,6 @@
 # Sankeydiagram maken #
 #######################
 
-##### Is hier eigenlijk iets aan veranderd?
-
-
 #################################################################
 # Packages laden
 
@@ -52,9 +49,25 @@ links <- sank %>%
 
 data <- list(nodes = nodes, links = links)
 
+# Groepen aanmaken voor kleuren in grafiek en labels
+
+groups <- sank %>%
+  unite("cp1", c("jaarS","from"), remove = FALSE) %>%
+  unite("cp2", c("jaarT","to"), remove = FALSE) 
+
 # Sankeydiagram maken
 
 sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
               Target = 'target', Value = 'value', NodeID = 'codetxt',
               units = 'ha', colourScale = , fontSize = 12, nodeWidth = 25, nodePadding = 20)
+
+# Poging om de kleuren aan te passen
+
+d3.scaleOrdinal(["#7d3945", "#e0677b", "#244457"])
+
+sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
+              Target = 'target', Value = 'value', NodeID = 'codetxt',
+              units = 'ha', colourScale = , fontSize = 12, nodeWidth = 25, nodePadding = 20)
+
+
 
