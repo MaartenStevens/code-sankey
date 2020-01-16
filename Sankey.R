@@ -1,7 +1,22 @@
+#######################
+# Sankeydiagram maken #
+#######################
+
+#################################################################
+# Packages laden
+
 library(networkD3)
 library(tidyverse)
 
-sank <- read.csv("Sankey_test.csv", sep=";", dec = ",")
+#################################################################
+# Dataset laden
+
+sank <- read.csv("Sankey.csv", sep=";", dec = ",")
+
+#################################################################
+# Data bewerken
+
+# Dataframe met nodes (= codes van landgebruiksklassen en bijhorende labels)
 
 cp1 <- sank %>% 
   unite("cp1", c("jaarS","from")) %>%
@@ -19,8 +34,9 @@ nodes <- cp1 %>%
   rename("code" = rowname) %>% 
   mutate(code = as.numeric(code) - 1)
 
+# Dataframe met links (= source (van), target (naar) en value (oppervlakte))
+
 links <- sank %>%
-  dplyr::select(-c(source, target, code, name)) %>% 
   unite("cp1", c("jaarS","from")) %>%
   unite("cp2", c("jaarT","to")) %>% 
   left_join(nodes, by = c("cp1" = "codetxt")) %>% 
@@ -29,9 +45,13 @@ links <- sank %>%
   rename(target = code) %>% 
   dplyr::select(c(source, target, value))
 
+# Aaneen plakken nodes en links in een List object
+
 data <- list(nodes = nodes, links = links)
 
+# Sankeydiagram maken
+
 sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
-              Target = 'target', Value = 'value', NodeID = 'name',
+              Target = 'target', Value = 'value', NodeID = 'codetxt',
               units = 'TWh', fontSize = 12, nodeWidth = 30)
 
