@@ -19,3 +19,5 @@ Of naar een internetpagina: [Package Network3D - sankeyNetwork](https://www.rdoc
 ## Gitten vanuit RStudio
 
 Testje om vanuit RStudio de README file aan te passen
+
+Nog een tesje want daarnet leip het drie keer mis
