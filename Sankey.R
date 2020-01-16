@@ -53,8 +53,25 @@ data <- list(nodes = nodes, links = links)
 
 groups <- sank %>%
   unite("cp1", c("jaarS","from"), remove = FALSE) %>%
-  unite("cp2", c("jaarT","to"), remove = FALSE) 
+  unite("cp2", c("jaarT","to"), remove = FALSE) %>% 
+  left_join(nodes, by = c("cp1" = "codetxt")) %>% 
+  rename(source = code) %>% 
+  left_join(nodes, by = c("cp2" = "codetxt")) %>% 
+  rename(target = code) 
 
+# Groepen toewijzen aan nodes en links
+
+links <- links %>% 
+  left_join(select(groups, labelS, source), by = "source") %>% 
+  rename("group" = "labelS")
+
+nodes <- nodes %>% 
+  left_join(select(groups, cp1, labelS), by = c("codetxt" = "cp1")) %>%  
+  left_join(select(groups, cp2, labelT), by = c("codetxt" = "cp2")) %>%
+  distinct(code, .keep_all = TRUE) %>% 
+  mutate(group = coalesce(labelS, labelT))
+
+#################################################################
 # Sankeydiagram maken
 
 sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
