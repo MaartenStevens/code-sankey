@@ -45,10 +45,6 @@ links <- sank %>%
   rename(target = code) %>% 
   dplyr::select(c(source, target, value))
 
-# Aaneen plakken nodes en links in een List object
-
-data <- list(nodes = nodes, links = links)
-
 # Groepen aanmaken voor kleuren in grafiek en labels
 
 groups <- sank %>%
@@ -70,6 +66,10 @@ nodes <- nodes %>%
   left_join(select(groups, cp2, labelT), by = c("codetxt" = "cp2")) %>%
   distinct(code, .keep_all = TRUE) %>% 
   mutate(group = coalesce(labelS, labelT))
+
+# Aaneen plakken nodes en links in een List object
+
+data <- list(nodes = nodes, links = links)
 
 #################################################################
 # Sankeydiagram maken
