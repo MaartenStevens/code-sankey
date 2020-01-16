@@ -53,5 +53,5 @@ data <- list(nodes = nodes, links = links)
 
 sankeyNetwork(Links = data$links, Nodes = data$nodes, Source = 'source',
               Target = 'target', Value = 'value', NodeID = 'codetxt',
-              units = 'TWh', fontSize = 12, nodeWidth = 30)
+              units = 'ha', colourScale = , fontSize = 12, nodeWidth = 25, nodePadding = 20)
 
