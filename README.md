@@ -20,4 +20,4 @@ Of naar een internetpagina: [Package Network3D - sankeyNetwork](https://www.rdoc
 
 Open bestand README.md -> doe de aanpassingen -> Onder de Git-tab (bovenaan rechts) selecteer je het bestand 
 en klik `Commit` -> Beschrijving Commit -> Klik `Commit` -> In de Git-tab klik je op `Push`. Op dat moment 
-wordt het aangepaste bestand naar de online repository verstuurd.
+wordt het aangepaste bestand naar de online repository verstuurd.Split commit 1Split commit 2Split commit 1
