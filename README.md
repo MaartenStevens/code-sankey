@@ -18,6 +18,6 @@ Of naar een internetpagina: [Package Network3D - sankeyNetwork](https://www.rdoc
 
 ## Gitten vanuit RStudio
 
-Testje om vanuit RStudio de README file aan te passen
-
-Nog een tesje want daarnet leip het drie keer mis
+Open bestand README.md -> doe de aanpassingen -> Onder de Git-tab (bovenaan rechts) selecteer je het bestand 
+en klik `Commit` -> Beschrijving Commit -> Klik `Commit` -> In de Git-tab klik je op `Push`. Op dat moment 
+wordt het aangepaste bestand naar de online repository verstuurd.
