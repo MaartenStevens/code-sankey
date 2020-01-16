@@ -12,3 +12,6 @@ Blijkbaar werkt dit zoals Markdown
 ## Links
 
 Kan ik hier links mee leggen? Naar een ander bestand in de repository of zo?
+[Databestand](Sankey_test.csv)
+
+Of naar een internetpagina: [Package Network3D - sankeyNetwork](https://www.rdocumentation.org/packages/networkD3/versions/0.4/topics/sankeyNetwork)
