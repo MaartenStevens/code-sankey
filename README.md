@@ -26,6 +26,6 @@ wordt het aangepaste bestand naar de online repository verstuurd.
 
 Soms heb je veel aanpassingen in een keer doorgevoerd (bv. aanpassingen in een chunk voor het inladen van de gegevens én aanpassingen in een chunk voor de analyses). In dat geval doe je er best aan om beide aanpassingen te splitten in 2 commits.
 
-Split commit 1
+## Kleuren aanpassen in het sankeydiagram
 
-Split commit 2
+https://www.r-graph-gallery.com/322-custom-colours-in-sankey-diagram.html
