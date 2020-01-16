@@ -2,6 +2,9 @@
 # Sankeydiagram maken #
 #######################
 
+##### Is hier eigenlijk iets aan veranderd?
+
+
 #################################################################
 # Packages laden
 
