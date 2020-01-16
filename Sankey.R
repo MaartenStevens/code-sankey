@@ -11,7 +11,7 @@ library(tidyverse)
 #################################################################
 # Dataset laden
 
-sank <- read.csv("Sankey.csv", sep=";", dec = ",")
+sank <- read.csv(file = "./data/Sankey.csv", sep=";", dec = ",")
 
 #################################################################
 # Data bewerken
