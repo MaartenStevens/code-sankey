@@ -33,5 +33,5 @@ Het package `NetworkD3` is beschikbaar op de standaard RStudio-repository, maar 
 
 Een woordje uitleg over hoe de kleuren van het diagram aangepast kunnen worden, vind je [hier](https://www.r-graph-gallery.com/322-custom-colours-in-sankey-diagram.html).
 
-
+Hexadecimale kleurencodes via [colorbrewer](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
 
