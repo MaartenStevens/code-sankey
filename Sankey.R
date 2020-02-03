@@ -12,11 +12,11 @@ library(sankeyD3) # Met dit package heb je controle over de font, de opacity, ..
 library(tidyverse)
 
 #################################################################
-# Dataset laden
+# Datasets laden
 
-sank_pre <- read.csv(file = "./data/clc_1990_2018.csv", sep=";", dec = ",")
+sank_pre <- read.csv(file = "./data/clc_1990_2018.csv", sep=";", dec = ",") # Tabel uit ArcGIS (resultaat Combine)
 code <- read.csv(file = "./data/clc_1990_2018_code.csv", sep=";", dec = ",") %>% 
-  select(c(clc_code, nara5_code, nara5_label, nara5_labels))
+  select(c(clc_code, nara5_code, nara5_label, nara5_labels)) # Vertaalsleutel Corine - NARA
 
 #################################################################
 # Data bewerken
